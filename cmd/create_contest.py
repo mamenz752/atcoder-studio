@@ -3,6 +3,7 @@ import sys
 
 PROBLEM_NAMES = ["A", "B", "C", "D", "E", "F"]
 
+# プログラム・入力例ファイル作成
 def create_file(dir_path):
     for problem in PROBLEM_NAMES:
         py_file_path = os.path.join(dir_path, f"{problem}.py")
@@ -12,6 +13,7 @@ def create_file(dir_path):
         with open(txt_file_path, "w") as txt_file:
             txt_file.write(f"{problem}.txt\n")
 
+# コンテスト番号によりファイル生成
 def create_contest(args):
     pwd_path = os.path.abspath(os.getcwd())
     dir_path = os.path.join(pwd_path, "contest", f"abc{args[1]}")
